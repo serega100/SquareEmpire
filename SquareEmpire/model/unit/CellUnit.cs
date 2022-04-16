@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using SquareEmpire.models.map.image;
 
 namespace SquareEmpire.models.unit
 {
@@ -6,9 +7,9 @@ namespace SquareEmpire.models.unit
     {
         public Image Image { get; }
 
-        protected CellUnit(Image image)
+        protected CellUnit(string imageFileName)
         {
-            Image = image;
+            Image = UnitImages.Get(imageFileName);
         }
     }
 }

@@ -23,15 +23,25 @@ namespace SquareEmpire.view
             {
                 var cell = _game.Cells[cellX, cellY];
                 if (cell == null) continue;
-
-                var rectangle = new Rectangle(10 + 50 * cellX, 10 + 50 * cellY, 50, 50);
-                if (cell.Owner != null) graphics.FillRectangle(new SolidBrush(cell.Owner.Color), rectangle);
+            
+                var cellRectangle = new Rectangle(10 + 50 * cellX, 10 + 50 * cellY, 50, 50);
+                if (cell.Owner != null) graphics.FillRectangle(new SolidBrush(cell.Owner.Color), cellRectangle);
                 if (cell.Unit != null)
                 {
-                    
+                    var unitRectangle = GetRectangleWithPadding(cellRectangle, 5);
+                    graphics.DrawImage(cell.Unit.Image, unitRectangle);
                 }
-                graphics.DrawRectangle(drawPen, rectangle);
+                graphics.DrawRectangle(drawPen, cellRectangle);
             }
+        }
+
+        private static Rectangle GetRectangleWithPadding(Rectangle rectangle, int padding)
+        {
+            var newWidth = rectangle.Width - padding * 2;
+            var newHeight = rectangle.Height - padding * 2;
+            var newX = rectangle.X + padding;
+            var newY = rectangle.Y + padding;
+            return new Rectangle(newX, newY, newWidth, newHeight);
         }
     }
 }

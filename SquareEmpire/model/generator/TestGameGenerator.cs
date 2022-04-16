@@ -31,6 +31,9 @@ namespace SquareEmpire.models.map.generator
             }
 
             cells[0, 4].Unit = new DefaultWarrior();
+            cells[1, 4].Unit = new DefaultWarrior();
+            cells[2, 4].Unit = new DefaultWarrior();
+            cells[3, 4].Unit = new DefaultWarrior();
             cells[0, 5].Unit = new DefaultWarrior();
 
             return new SquareEmpireGame(cells, teams);
