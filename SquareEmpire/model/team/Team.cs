@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace SquareEmpire.models.team
+namespace SquareEmpire.model.team
 {
     public class Team
     {

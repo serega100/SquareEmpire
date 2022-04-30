@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using SquareEmpire.model.unit;
 
 namespace SquareEmpire.models.unit.warrior
 {

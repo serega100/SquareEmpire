@@ -1,21 +1,23 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using SquareEmpire.models.map;
+using SquareEmpire.model;
 
 namespace SquareEmpire.view
 {
-    public class GameForm : Form
+    public class GameDrawer : IPaintDrawer
     {
-        private SquareEmpireGame _game;
+        private readonly Form _form;
+        private readonly SquareEmpireGame _game;
 
-        public GameForm(SquareEmpireGame game)
+        public GameDrawer(Form form, SquareEmpireGame game)
         {
+            _form = form;
             _game = game;
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        public void Paint(PaintEventArgs args)
         {
-            var graphics = e.Graphics;
+            var graphics = args.Graphics;
             var drawPen = new Pen(Color.Black, 3);
 
             for (var cellX = 0; cellX < _game.Cells.GetLength(0); cellX++)
@@ -34,7 +36,7 @@ namespace SquareEmpire.view
                 graphics.DrawRectangle(drawPen, cellRectangle);
             }
         }
-
+        
         private static Rectangle GetRectangleWithPadding(Rectangle rectangle, int padding)
         {
             var newWidth = rectangle.Width - padding * 2;

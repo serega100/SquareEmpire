@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 
-namespace SquareEmpire.models.map.image
+namespace SquareEmpire.model.image
 {
     public static class UnitImages
     {

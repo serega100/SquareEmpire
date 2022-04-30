@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
-using SquareEmpire.models.team;
+using SquareEmpire.model.map;
+using SquareEmpire.model.team;
 using SquareEmpire.models.unit.warrior;
 
-namespace SquareEmpire.models.map.generator
+namespace SquareEmpire.model.generator
 {
     public class TestGameGenerator : IGameGenerator
     {

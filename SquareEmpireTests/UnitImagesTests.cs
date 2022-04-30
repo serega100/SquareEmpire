@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using SquareEmpire.models.map.image;
+using SquareEmpire.model.image;
 
 namespace SquareEmpireTests
 {

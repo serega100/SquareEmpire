@@ -1,7 +1,8 @@
-﻿using SquareEmpire.models.team;
+﻿using SquareEmpire.model.team;
+using SquareEmpire.model.unit;
 using SquareEmpire.models.unit;
 
-namespace SquareEmpire.models.map
+namespace SquareEmpire.model.map
 {
     public class MapCell
     {

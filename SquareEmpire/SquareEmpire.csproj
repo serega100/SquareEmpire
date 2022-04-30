@@ -6,8 +6,4 @@
         <TargetFramework>net5.0-windows</TargetFramework>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="controller" />
-    </ItemGroup>
-
 </Project>

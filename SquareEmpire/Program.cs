@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using SquareEmpire.models.map.generator;
+using SquareEmpire.model.generator;
 using SquareEmpire.view;
 
 namespace SquareEmpire

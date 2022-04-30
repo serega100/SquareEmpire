@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using SquareEmpire.models.map.image;
+using SquareEmpire.model.image;
 
-namespace SquareEmpire.models.unit
+namespace SquareEmpire.model.unit
 {
     public abstract class CellUnit
     {

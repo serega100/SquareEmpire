@@ -1,7 +1,8 @@
 ﻿using System.Collections.Immutable;
-using SquareEmpire.models.team;
+using SquareEmpire.model.map;
+using SquareEmpire.model.team;
 
-namespace SquareEmpire.models.map
+namespace SquareEmpire.model
 {
     public class SquareEmpireGame
     {
@@ -13,5 +14,9 @@ namespace SquareEmpire.models.map
             Cells = cells;
             Teams = teams;
         }
+        
+        // TODO: Create methods here
+        
+        // TODO: Create events here
     }
 }

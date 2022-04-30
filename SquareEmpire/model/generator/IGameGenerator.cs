@@ -1,4 +1,4 @@
-﻿namespace SquareEmpire.models.map.generator
+﻿namespace SquareEmpire.model.generator
 {
     public interface IGameGenerator
     {
