@@ -7,8 +7,6 @@ namespace SquareEmpire
 {
     static class Program
     {
-        private static IGameGenerator _gameGenerator = new TestGameGenerator();
-        
         [STAThread]
         static void Main()
         {
@@ -16,7 +14,7 @@ namespace SquareEmpire
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new MainForm());
-            Application.Run(new GameForm(_gameGenerator.GenerateGameMap()));
+            Application.Run(new GameForm());
         }
 
         private static void RunMainView()

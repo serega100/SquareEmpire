@@ -1,18 +1,33 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using SquareEmpire.controller;
 using SquareEmpire.model;
 
 namespace SquareEmpire.view
 {
-    public class GameDrawer : IPaintDrawer
+    public class DefaultGameDrawer : IGameDrawer
     {
+        private static readonly Color SelectedColor = Color.Yellow;
+        
         private readonly Form _form;
         private readonly SquareEmpireGame _game;
+        private readonly AssetsHolder _assets;
+        private readonly CellLayout _cellLayout;
 
-        public GameDrawer(Form form, SquareEmpireGame game)
+        public DefaultGameDrawer(Form form,SquareEmpireGame game)
         {
             _form = form;
             _game = game;
+            _assets = new AssetsHolder();
+            _cellLayout = new CellLayout(50, 10, 10);
+
+            _game.OnSelectCell += _form.Invalidate;
+        }
+        
+        public ICoordinatedCellLayout GetCellLayout()
+        {
+            return _cellLayout;
         }
 
         public void Paint(PaintEventArgs args)
@@ -26,17 +41,23 @@ namespace SquareEmpire.view
                 var cell = _game.Cells[cellX, cellY];
                 if (cell == null) continue;
             
-                var cellRectangle = new Rectangle(10 + 50 * cellX, 10 + 50 * cellY, 50, 50);
-                if (cell.Owner != null) graphics.FillRectangle(new SolidBrush(cell.Owner.Color), cellRectangle);
+                var cellRectangle = _cellLayout.GetCellRectangle(cellX, cellY);
+                if (_game.SelectedCellLocation.Equals(new Point(cellX, cellY)))
+                {
+                    graphics.FillRectangle(new SolidBrush(SelectedColor), cellRectangle);
+                } else if (cell.Owner != null)
+                {
+                    graphics.FillRectangle(new SolidBrush(cell.Owner.Color), cellRectangle);
+                }
                 if (cell.Unit != null)
                 {
                     var unitRectangle = GetRectangleWithPadding(cellRectangle, 5);
-                    graphics.DrawImage(cell.Unit.Image, unitRectangle);
+                    graphics.DrawImage(_assets.GetImage(cell.Unit.ImageId), unitRectangle);
                 }
                 graphics.DrawRectangle(drawPen, cellRectangle);
             }
         }
-        
+
         private static Rectangle GetRectangleWithPadding(Rectangle rectangle, int padding)
         {
             var newWidth = rectangle.Width - padding * 2;

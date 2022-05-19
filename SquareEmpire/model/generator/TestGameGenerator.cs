@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
-using SquareEmpire.model.map;
 using SquareEmpire.model.team;
 using SquareEmpire.models.unit.warrior;
 
@@ -9,7 +8,7 @@ namespace SquareEmpire.model.generator
 {
     public class TestGameGenerator : IGameGenerator
     {
-        public SquareEmpireGame GenerateGameMap()
+        public SquareEmpireGame GenerateGame()
         {
             var teams = new List<Team>
             {

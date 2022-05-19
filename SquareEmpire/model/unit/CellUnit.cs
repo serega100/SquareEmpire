@@ -1,15 +1,14 @@
-﻿using System.Drawing;
-using SquareEmpire.model.image;
+﻿using System;
 
 namespace SquareEmpire.model.unit
 {
     public abstract class CellUnit
     {
-        public Image Image { get; }
+        public string ImageId { get; }
 
         protected CellUnit(string imageFileName)
         {
-            Image = UnitImages.Get(imageFileName);
+            ImageId = imageFileName;
         }
     }
 }

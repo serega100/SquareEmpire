@@ -2,6 +2,6 @@
 {
     public interface IGameGenerator
     {
-        public SquareEmpireGame GenerateGameMap();
+        public SquareEmpireGame GenerateGame();
     }
 }
