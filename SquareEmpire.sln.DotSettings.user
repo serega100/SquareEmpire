@@ -5,6 +5,8 @@
     &lt;TestAncestor&gt;&#xD;
       &lt;TestId&gt;NUnit3x::E8986533-26CB-40A9-A016-5ACFD3957B7D::net5.0-windows7.0::SquareEmpireTests.CellLayoutTests.TransferScreenToCellCoordinates&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::E8986533-26CB-40A9-A016-5ACFD3957B7D::net5.0-windows7.0::SquareEmpireTests.CellLayoutTests&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::E8986533-26CB-40A9-A016-5ACFD3957B7D::net5.0-windows7.0::SquareEmpireTests.SquareEmpireGameTests.ShouldNotSelectCell&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::E8986533-26CB-40A9-A016-5ACFD3957B7D::net5.0-windows7.0::SquareEmpireTests.SquareEmpireGameTests.ShouldSelectCell&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

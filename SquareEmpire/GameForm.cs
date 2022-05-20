@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Forms;
 using SquareEmpire.controller;
 using SquareEmpire.model;
@@ -18,7 +17,6 @@ namespace SquareEmpire
 
         public GameForm()
         {
-            Debug.WriteLine("Hi everyone!");
             _gameGenerator = new TestGameGenerator();
             _game = _gameGenerator.GenerateGame();
             _gameDrawer = new DefaultGameDrawer(this, _game);

@@ -17,18 +17,14 @@ namespace SquareEmpire.controller
         public void HandleClick(int viewX, int viewY)
         {
             var cellCoordinates = _layout.GetCellCoordinates(viewX, viewY);
-            if (cellCoordinates == null)
+            var cell = cellCoordinates != null ? _game.GetCell(cellCoordinates.Value) : null;
+
+            if (cellCoordinates == null || cell?.Owner == null || !cell.Owner.Equals(_game.PlayerTeam))
             {
-                Debug.WriteLine("Cell coordinates is null");
+                _game.UnselectCell();
                 return;
             }
-            var cell = _game.GetCell((Point) cellCoordinates);
-            if (cell == null)
-            {
-                Debug.WriteLine("Cell object is null");
-                return;
-            }
-            Debug.WriteLine($"Selecting cell {cellCoordinates.Value.X} {cellCoordinates.Value.Y}");
+            
             _game.SelectCell((Point) cellCoordinates);
         }
     }
